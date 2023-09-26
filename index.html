@@ -1,24 +1,62 @@
 <!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv = "refresh" content = "1800; url = https://scatv.netlify.app" />
-  <style>
-  .responsive-google-slides {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Ratio */
-    height: 0;
-    overflow: hidden;
-  }
-  .responsive-google-slides iframe {
-    border: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-  }
-</style>
+    <meta http-equiv="refresh" content="1800; url=https://scatv.netlify.app">
+    <style>
+        .responsive-google-slides {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .responsive-google-slides iframe {
+            border: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        /* New CSS for the weather widget */
+        .weather-widget {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 0px;
+            color: #fff;
+            z-index: 1; /* Ensure the widget is above the slides */
+        }
+
+        /* Remove the border around the weather widget */
+        .weather-widget a {
+            border: none !important;
+        }
+    </style>
 </head>
 <body bgcolor="#000000">
-  <div class="responsive-google-slides">
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSY9fbOu6zEJ4xGlkh7MrkKJnBtmARL7QZ7kRtinDTBi-KL1bJ3w5fS90AI9ZQvJi6HMtt1vStosYfB/embed?start=true&loop=true&delayms=15000&rm=minimal" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<div class="responsive-google-slides">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSY9fbOu6zEJ4xGlkh7MrkKJnBtmARL7QZ7kRtinDTBi-KL1bJ3w5fS90AI9ZQvJi6HMtt1vStosYfB/embed?start=true&amp;loop=true&amp;delayms=15000&amp;rm=minimal" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    
+    <!-- Weather widget overlaying the bottom -->
+    <div class="weather-widget">
+        <a class="weatherwidget-io" href="https://forecast7.com/en/45d25n63d28/brookfield/" data-label_1="BROOKFIELD" data-label_2="WEATHER" data-days="3" data-theme="original">BROOKFIELD WEATHER</a>
+        <script>
+            !function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = 'https://weatherwidget.io/js/widget.min.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, 'script', 'weatherwidget-io-js');
+        </script>
+    </div>
 </div>
+</body>
+</html>
